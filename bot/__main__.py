@@ -50,7 +50,7 @@ This bot can mirror all your links to Google Drive!
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("Repo", "https://github.com/hyPnOtICDo0g/hishirobot")
+    buttons.buildbutton("Channel", "https://t.me/VaathiCloud")
     buttons.buildbutton("Read ReLIFE", "https://myanimelist.net/manga/78523/ReLIFE")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
@@ -110,42 +110,12 @@ def bot_help(update, context):
 
 /{BotCommands.CancelAllCommand}: Cancel all running tasks
 
-/{BotCommands.ListCommand} [search term]: Recursively searches the given query, replies with the search results if found
-
 /{BotCommands.StatusCommand}: Shows a status of all the downloads
 
 /{BotCommands.StatsCommand}: Show Stats of the machine the bot is hosted on
-
-/{BotCommands.PingCommand}: Check how long it takes to Ping the Bot
-
-/{BotCommands.AuthorizeCommand}: Authorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
-
-/{BotCommands.UnAuthorizeCommand}: Unauthorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
-
-/{BotCommands.AuthorizedUsersCommand}: Show authorized users (Only Owner & Sudo)
-
-/{BotCommands.AddSudoCommand}: Add sudo user (Only Owner)
-
-/{BotCommands.RmSudoCommand}: Remove sudo users (Only Owner)
-
-/{BotCommands.RestartCommand}: Restart the bot
-
-/{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
-
-/{BotCommands.SpeedCommand}: Check Internet Speed of the Host
-
-/{BotCommands.ShellCommand}: Run commands in Shell (Terminal)
-
-/{BotCommands.ExecHelpCommand}: Get help for Executor module (Only Owner)
-
-/{BotCommands.TsHelpCommand}: Get help for Torrent search module
-
-/{BotCommands.RssHelpCommand}:  Get help for RSS feeds module
 '''
 
     help_string = f'''
-/{BotCommands.HelpCommand}: To get this message
-
 /{BotCommands.MirrorCommand} [download_url][magnet_link]: Start mirroring the link to Google Drive. Use /{BotCommands.MirrorCommand} qb to mirror with qBittorrent, and use /{BotCommands.MirrorCommand} qbs to select files before downloading
 
 /{BotCommands.TarMirrorCommand} [download_url][magnet_link]: Start mirroring and upload the archived (.tar) version of the download
@@ -164,15 +134,9 @@ def bot_help(update, context):
 
 /{BotCommands.CancelMirror}: Reply to the message by which the download was initiated and that download will be cancelled
 
-/{BotCommands.ListCommand} [search term]: Recursively searches the given query, replies with the search results if found
-
 /{BotCommands.StatusCommand}: Shows a status of all the downloads
 
 /{BotCommands.StatsCommand}: Show Stats of the machine the bot is hosted on
-
-/{BotCommands.PingCommand}: Check how long it takes to Ping the Bot
-
-/{BotCommands.TsHelpCommand}: Get help for Torrent search module
 '''
 
     if CustomFilters.sudo_user(update) or CustomFilters.owner_filter(update):
@@ -182,7 +146,6 @@ def bot_help(update, context):
 
 
 botcmds = [
-        (f'{BotCommands.HelpCommand}','Get Detailed Help'),
         (f'{BotCommands.MirrorCommand}', 'Start Mirroring'),
         (f'{BotCommands.UnzipMirrorCommand}','Extract files'),
         (f'{BotCommands.ZipMirrorCommand}','Start mirroring and upload as .zip'),
@@ -193,12 +156,8 @@ botcmds = [
         (f'{BotCommands.WatchCommand}','Mirror Youtube-dl support link'),
         (f'{BotCommands.CancelMirror}','Cancel a task'),
         (f'{BotCommands.CancelAllCommand}','Cancel all tasks'),
-        (f'{BotCommands.ListCommand}','Recursively searches files/folders in Drive'),
         (f'{BotCommands.StatusCommand}','Get Mirror Status message'),
-        (f'{BotCommands.StatsCommand}','Bot Usage Stats'),
-        (f'{BotCommands.RestartCommand}','Restart the bot [owner/sudo only]'),
-        (f'{BotCommands.LogCommand}','Get the Bot Log [owner/sudo only]'),
-        (f'{BotCommands.TsHelpCommand}','Get help for Torrent search module'),
+        (f'{BotCommands.StatsCommand}','Bot Usage Stats')
     ]
 
 
