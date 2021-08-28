@@ -355,10 +355,6 @@ try:
         IGNORE_PENDING_REQUESTS = False
 except KeyError:
     IGNORE_PENDING_REQUESTS = False
-
-if DRIVE_ID :
-    pass
-else :
     LOGGER.error("The README.md file there to be read! Exiting now!")
     exit(1)
 
