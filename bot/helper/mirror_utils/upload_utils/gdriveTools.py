@@ -627,9 +627,9 @@ class GoogleDriveHelper:
                     content += f'<b> | <a href="https://telegra.ph/{self.path[nxt_page]}">Next</a></b>'
                     nxt_page += 1
             Telegraph(access_token=telegraph_token).edit_page(path = self.path[prev_page],
-                                 title = 'Hishiro Search',
-                                 author_name='Hishiro Bot',
-                                 author_url='https://github.com/hyPnOtICDo0g/hishirobot',
+                                 title = 'Search',
+                                 author_name='kaipulla',
+                                 author_url='https://github.com/bodysoda69',
                                  html_content=content)
         return
 
@@ -715,9 +715,9 @@ class GoogleDriveHelper:
 
             for content in self.telegraph_content :
                 self.path.append(Telegraph(access_token=telegraph_token).create_page(
-                                                        title = 'Hishiro Search',
-                                                        author_name='Hishiro Bot',
-                                                        author_url='https://github.com/hyPnOtICDo0g/hishirobot',
+                                                        title = 'Search',
+                                                        author_name='kaipulla',
+                                                        author_url='https://github.com/bodysoda69',
                                                         html_content=content
                                                         )['path'])
 
@@ -799,9 +799,9 @@ class GoogleDriveHelper:
 
         for content in self.telegraph_content :
             self.path.append(telegra_ph.create_page(
-                                                    title = 'Hishiro Search',
-                                                    author_name='Hishiro Bot',
-                                                    author_url='https://github.com/hyPnOtICDo0g/hishirobot',
+                                                    title = 'Vaathi Search',
+                                                    author_name='Kaipulla',
+                                                    author_url='https://github.com/bodysoda69',
                                                     html_content=content )['path'])
 
         self.num_of_path = len(self.path)      
